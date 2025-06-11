@@ -214,6 +214,7 @@ nav.lingarch-header .links a {
   position: relative;
   font-family: 'Poppins-regular';
   font-weight: 600;
+  transition: all 1s ease;
 }
 
 a.schedule-meeting-btn {
@@ -426,8 +427,8 @@ nav .icon-burger .line {
   border-radius: 4px;
   text-decoration: none;
   display: inline-block;
-  transition: background-color 0.3s;
   font-family: 'Montserrat-Regular';
+  transition: all 1s ease;
 }
 
 .btn-contact:hover {
@@ -515,7 +516,7 @@ section.industries_section {
   bottom: 30%;
   color: #fff;
   padding: 20px;
-  width: 80%;
+  width: 95%;
   left: 0;
   right: 0;
   margin: auto;
@@ -528,7 +529,7 @@ section.industries_section {
   font-weight: 600;
   color: #fff;
   margin-bottom: 20px;
-  font-family: Poppins-Bold;
+  font-family: Poppins-Semibold;
 }
 
 /* Highlighted letters (a, c) */
@@ -564,17 +565,30 @@ h3.mobile_h3 {
 
 /* Buttons */
 .get_btn a {
-  padding: 12px 24px;
-  font-size: 16px;
+  padding: 15px 30px;
+  font-size: 18px;
   font-weight: 500;
   border-radius: 6px;
   text-decoration: none;
   font-family: 'Montserrat-SemiBold';
 }
 
+
+
 /* Blue button */
 .get_btn:first-child a {
   background-color: #007bff;
+  color: #fff;
+  transition: all 1s ease;
+}
+
+.get_btn:first-child a:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+.get_btn:last-child a:hover {
+  background-color: #006FE6;
   color: #fff;
 }
 
@@ -582,6 +596,7 @@ h3.mobile_h3 {
 .get_btn:last-child a {
   background-color: #fff;
   color: #000;
+  transition: all 1s ease;
 }
 
 
@@ -615,7 +630,17 @@ h3.mobile_h3 {
   background: #0077FF;
   color: #fff;
   padding: 30px 20px;
-  border-radius: 10px;
+  border-radius: 5px;
+}
+
+.explore-btn a.explore-all {
+  transition: all 0.3s ease;
+  /* Adjust duration and easing here */
+}
+
+.explore-btn a.explore-all:hover {
+  background: #007BFF;
+  color: #fff;
 }
 
 .stat-number {
@@ -687,7 +712,7 @@ h3.mobile_h3 {
 
 .h3_conent {
   background: #0A264D;
-  height: 130px;
+  height: 110px;
   border-radius: 0px 0px 5px 5px;
   padding: 19px;
   text-align: left;
@@ -989,15 +1014,16 @@ select::placeholder {
   display: block;
 }
 
-
 .item-content_con {
-  border-radius: 4px;
+  border-radius: 5px;
   overflow: hidden;
+  background: #0A264D;
   box-shadow: 0 15px 30px 0 rgba(7, 29, 73, 0);
   transition: transform 200ms ease, box-shadow 200ms ease;
   transform: translateY(0);
   max-width: 100%;
-  background: #0A264D;
+  will-change: transform;
+  backface-visibility: hidden;
 }
 
 .item-content_con:hover {
@@ -1006,38 +1032,56 @@ select::placeholder {
   border: none;
   outline: none;
 }
-i.fa-solid.fa-globe.mobile_global {
-    display: none;
+
+.item-content_con img {
+  display: block;
+  width: 100%;
+  border-bottom: none;
 }
+
+i.fa-solid.fa-globe.mobile_global {
+  display: none;
+}
+
 .banner {
-      font-size: 2rem;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      margin-bottom: 30px;
-      flex-wrap: wrap;
-    }
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
 
 .t-banners-slide-text {
-    font-weight: bold;
-    color: #fff;
-    white-space: nowrap;
-    overflow: hidden;
-    display: inline-block;
-    background: #007BFF;
-    padding: 0 10px;
+  font-weight: bold;
+  color: #fff;
+  white-space: nowrap;
+  overflow: hidden;
+  display: inline-block;
+  background: rgba(0, 123, 255, 0.5);
+  /* 60% opacity background */
+  padding: 0 10px;
+  border-radius: 5px;
 }
 
 
-    .t-banners-caret {
-      animation: blink 0.8s infinite;
-      color: #000;
-    }
+.t-banners-caret {
+  animation: blink 0.8s infinite;
+  color: #000;
+}
 
-    @keyframes blink {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0; }
-    }
+@keyframes blink {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+}
+
 @media screen and (max-width: 1400px) {}
 
 @media screen and (max-width: 1300px) {
@@ -1111,14 +1155,16 @@ i.fa-solid.fa-globe.mobile_global {
   .footer_main {
     grid-template-columns: 2fr 2fr;
   }
-i.fa-solid.fa-globe.global-icon {
+
+  i.fa-solid.fa-globe.global-icon {
     display: none;
-}
+  }
 
 
-i.fa-solid.fa-globe.mobile_global {
+  i.fa-solid.fa-globe.mobile_global {
     display: block;
-}
+  }
+
   .banner_video_main h3 {
     font-size: 2.2rem;
   }
@@ -1381,7 +1427,7 @@ i.fa-solid.fa-globe.mobile_global {
   }
 
   .banner_video_main {
-    padding: 15px;
+    padding: 0px;
     position: unset;
     width: 100%;
   }
