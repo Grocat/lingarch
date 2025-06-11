@@ -125,7 +125,7 @@ $(document).ready(function () {
         textEl.textContent = word.slice(0, charIndex + 1);
         charIndex++;
         if (charIndex < word.length) {
-          setTimeout(typeWord, 200);
+          setTimeout(typeWord, 100);
         } else {
           setTimeout(() => {
             eraseWord(() => {
@@ -133,7 +133,7 @@ $(document).ready(function () {
               charIndex = 0;
               typeWord();
             });
-          }, 4000);
+          }, 3000);
         }
       }
 
