@@ -1,11 +1,10 @@
-
- document.querySelectorAll('.dropdown-parent > a').forEach(link => {
-    link.addEventListener('click', function (e) {
-      e.preventDefault();
-      const dropdown = this.nextElementSibling;
-      dropdown.classList.toggle('open');
-    });
+document.querySelectorAll('.dropdown-parent > a').forEach(link => {
+  link.addEventListener('click', function (e) {
+    e.preventDefault();
+    const dropdown = this.nextElementSibling;
+    dropdown.classList.toggle('open');
   });
+});
 
 function animateCounter(element, target) {
   let count = 0;
@@ -35,31 +34,37 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 $(document).ready(function () {
-$('.brand-carousel').owlCarousel({
-   autoplay: true,
-  loop: true,
-  margin: 15,
-  dots: false,
-  slideTransition: "linear",
-  autoHeight:true,
-  autoplayTimeout: 1000,
-  autoplayHoverPause: false,
-  autoplaySpeed: 1500,
-  navText: false, // Consistent speed calculations
+  $('.brand-carousel').owlCarousel({
+    autoplay: true,
+    loop: true,
+    margin: 15,
+    dots: false,
+    slideTransition: "linear",
+    autoHeight: true,
+    autoplayTimeout: 1000,
+    autoplayHoverPause: false,
+    autoplaySpeed: 1500,
+    navText: false, // Consistent speed calculations
     responsive: {
-        0: { items: 2 },
-        600: { items: 4 },
-        1000: { items: 6 }
+      0: {
+        items: 2
+      },
+      600: {
+        items: 4
+      },
+      1000: {
+        items: 6
+      }
     }
-});
+  });
 
   $(".case-carousel").owlCarousel({
     loop: true,
     margin: 20,
-    autoplay: false ,
+    autoplay: false,
     smartSpeed: 800,
     dots: true,
-    nav:true,
+    nav: true,
     responsive: {
       0: {
         items: 1
@@ -73,3 +78,74 @@ $('.brand-carousel').owlCarousel({
     }
   });
 });
+    document.querySelectorAll('.dropdown-parent > a').forEach(a => {
+      a.addEventListener('click', e => {
+        const parent = a.parentElement;
+        parent.classList.toggle('open');
+        e.preventDefault();
+      });
+    });
+
+     const config = {
+      "t_animated_words_banner": {
+        "show_cursor": "0",
+        "typing_speed": "low", // Currently fixed speed
+        "text_items": [
+          ["customers", "audience","clients ","patience","viewers", "stakeholders"],
+          [ "content", "legal documents", "treatment plan","voice-over","communication"]
+        ]
+      }
+    };
+
+    const banners = [
+      {
+        textId: 'text-1',
+        caretId: 'caret-1',
+        words: config.t_animated_words_banner.text_items[0]
+      },
+      {
+        textId: 'text-2',
+        caretId: 'caret-2',
+        words: config.t_animated_words_banner.text_items[1]
+      }
+    ];
+
+    banners.forEach(({ textId, caretId, words }) => {
+      const textEl = document.getElementById(textId);
+      const caretEl = document.getElementById(caretId);
+      if (config.t_animated_words_banner.show_cursor === "0") {
+        caretEl.style.display = "none";
+      }
+
+      let wordIndex = 0;
+      let charIndex = 0;
+
+      function typeWord() {
+        const word = words[wordIndex];
+        textEl.textContent = word.slice(0, charIndex + 1);
+        charIndex++;
+        if (charIndex < word.length) {
+          setTimeout(typeWord, 200);
+        } else {
+          setTimeout(() => {
+            eraseWord(() => {
+              wordIndex = (wordIndex + 1) % words.length;
+              charIndex = 0;
+              typeWord();
+            });
+          }, 4000);
+        }
+      }
+
+      function eraseWord(callback) {
+        const current = textEl.textContent;
+        if (current.length > 0) {
+          textEl.textContent = current.slice(0, -1);
+          setTimeout(() => eraseWord(callback), 50);
+        } else {
+          callback();
+        }
+      }
+
+      typeWord();
+    });
