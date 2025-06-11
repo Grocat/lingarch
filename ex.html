@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Animated Banner</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background: linear-gradient(135deg, #f6f8f9 0%, #e5ebee 100%);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .text-container {
+      padding: 2rem;
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 10px;
+      box-shadow: 0 8px 32px rgba(31, 38, 135, 0.15);
+      transition: transform 0.3s ease;
+    }
+
+    h1 {
+      font-size: 3rem;
+      font-weight: 300;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      position: relative;
+    }
+
+    .prefix {
+      font-size: 2.5rem;
+    }
+
+    .message {
+      position: relative;
+      width: 12ch;
+      height: 3.2rem;
+      display: inline-block;
+      overflow: hidden;
+      background: linear-gradient(45deg, #a8d8ea, #aa96da);
+      border-radius: 6px;
+      padding: 0.5rem 1rem;
+      animation: openclose 8s ease-in-out infinite;
+    }
+
+    .word {
+      position: absolute;
+      width: 100%;
+      opacity: 0;
+      font-weight: bold;
+      font-family: Tahoma;
+      font-size: 2.2rem;
+      transition: transform 3s;
+    }
+
+    .word1 { animation: word-animation 8s infinite; }
+
+    @keyframes word-animation {
+      0%, 5% { opacity: 0; }
+      10%, 22% { opacity: 1; }
+      27%, 100% { opacity: 0; }
+    }
+
+    @keyframes openclose {
+      0%, 5% { width: 0; }
+      10%, 22% { width: 12ch; }
+      27%, 100% { width: 0; }
+    }
+
+    @keyframes sparkle {
+      from { transform: scale(1); opacity: 1; }
+      to { transform: scale(1.5); opacity: 0; }
+    }
+
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2rem;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .message {
+        width: 10ch;
+        height: 2.5rem;
+      }
+
+      .word {
+        font-size: 1.6rem;
+      }
+
+      .prefix {
+        font-size: 1.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="text-container">
+    <h1>
+      <span class="prefix">Your</span>
+      <span class="message">
+        <span class="word word1">awesome</span>
+        <span class="word word1">nice</span>
+        <span class="word word1">sweet</span>
+        <span class="word word1">great</span>
+      </span>
+            <span class="prefix">could be anywhere.</span>
+    </h1>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const message = document.querySelector('.message');
+      const words = document.querySelectorAll('.word');
+
+      // Click to slightly scale
+      words.forEach(word => {
+        word.addEventListener('click', () => {
+          word.style.transform = 'scale(1.1)';
+          setTimeout(() => word.style.transform = 'scale(1)', 1000);
+        });
+      });
+
+      // Double click sparkle effect
+      message.addEventListener('dblclick', () => {
+        const sparkle = document.createElement('span');
+        sparkle.textContent = '✨';
+        sparkle.style.position = 'absolute';
+        sparkle.style.left = `${Math.random() * 100}%`;
+        sparkle.style.top = `${Math.random() * 100}%`;
+        sparkle.style.pointerEvents = 'none';
+        sparkle.style.animation = 'sparkle 3s forwards';
+        message.appendChild(sparkle);
+        setTimeout(() => sparkle.remove(), 3000);
+      });
+    });
+  </script>
+
+</body>
+</html>
