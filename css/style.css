@@ -547,7 +547,7 @@ section.industries_section {
   color: #fff;
   margin-bottom: 30px;
   font-family: 'Poppins-Regular';
-  width: 70%;
+  width: 55%;
   line-height: 40px;
 }
 
@@ -606,6 +606,24 @@ h3.mobile_h3 {
   background: #F9FCFF;
   padding: 50px 20px;
   text-align: center;
+}
+
+.industries_main_div .item-content {
+  background: #fff;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 15px 30px 0 rgba(7, 29, 73, 0);
+  transition: transform 200ms ease, box-shadow 200ms ease;
+  transform: translateY(0);
+  max-width: 100%;
+  margin-right: 0;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.industries_main_div .item-content:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px 0 rgba(7, 29, 73, 0.66);
 }
 
 .section-heading {
@@ -921,6 +939,10 @@ section.home_form_section {
   margin-bottom: 15px;
 }
 
+.mega_under a {
+  padding: 0 !important;
+}
+
 .info-form select,
 input,
 textarea {
@@ -989,7 +1011,7 @@ select::placeholder {
 .mega-item {
   display: flex;
   gap: 10px;
-  padding: 20px;
+  padding: 15px;
 }
 
 .mega-item:hover {
@@ -1218,7 +1240,8 @@ i.fa-solid.fa-globe.mobile_global {
   }
 
   nav.lingarch-header .links a:not(:has(img)) {
-    font-size: 20px;
+    font-size: 14px;
+    padding: 0px;
   }
 
   nav.lingarch-header .links li {
@@ -1227,6 +1250,7 @@ i.fa-solid.fa-globe.mobile_global {
 
   nav.lingarch-header {
     height: 80px;
+    align-items: center;
   }
 
   nav.lingarch-header .links {
@@ -1313,7 +1337,7 @@ i.fa-solid.fa-globe.mobile_global {
 
   .lingarch-header .dropdown-parent span::before,
   .lingarch-header .dropdown-mainchild span::before {
-    right: 0;
+    right: -15px;
   }
 
 }
@@ -1417,23 +1441,27 @@ i.fa-solid.fa-globe.mobile_global {
     display: block;
   }
 
+  section.home_form_section {
+    padding: 40px 0;
+  }
+
   .industries_main_div {
     grid-template-columns: 1fr;
   }
 
   .banner-video-section {
-    padding: 20px;
+    padding: 0px;
     height: auto;
   }
 
   .banner_video_main {
-    padding: 0px;
+    padding: 20px 10px;
     position: unset;
     width: 100%;
   }
 
   .banner_video_main h3 {
-    font-size: 1.7rem;
+    font-size: 22px;
     line-height: 1.4;
   }
 
@@ -1455,17 +1483,23 @@ i.fa-solid.fa-globe.mobile_global {
   }
 
   section.global_brand_section {
-    padding: 50px 0;
+    padding: 40px 10px;
+  }
+
+  section.industries_section {
+    padding: 40px 10px;
+  }
+
+  section.case_studies_section {
+    padding: 40px 10px;
   }
 }
 
 @media screen and (max-width: 500px) {
-  section.industries_section {
-    padding: 80px 10px;
-  }
+
 
   .stats-section {
-    padding: 50px 10px;
+    padding: 40px 10px;
   }
 
   .form_conent {
