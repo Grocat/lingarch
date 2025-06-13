@@ -181,10 +181,12 @@ nav.lingarch-header {
   align.case-carousel -items: center;
 }
 
-/* Logo */
 nav.lingarch-header .logo {
-  width: 150px;
-  height: auto;
+    width: 150px;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .logo img {
