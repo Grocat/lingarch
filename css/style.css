@@ -221,7 +221,9 @@ a.schedule-meeting-btn {
   color: #fff !important;
   padding: 10px 20px !important;
 }
-
+nav.lingarch-header .links a:hover {
+    color: #006DE3;
+}
 nav.lingarch-header .links a:not(:has(img)):hover::before {
   transform: scaleX(1);
   visibility: visible;
