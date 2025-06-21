@@ -2312,6 +2312,9 @@ section.pillar-page_inner {
 .main_div_pillar ul li {
     font-size: 14px;
 }
+section.intro_section {
+    padding: 30px 10px;
+}
 .main_div_pillar {
     padding: 20px 10px;
 }
