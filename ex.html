@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>World Map - Office Locations</title>
+  <style>
+    
+
+  </style>
+</head>
+<body>
+<section class="map_section">
+  <div class="map-container">
+    <img src="image/Map.png" alt="Map" />
+
+    <div class="location location-chicago">
+      <div class="pin-1"></div>
+      <div class="show_conent"><h5>Chicago</h5></div>
+      <div class="tooltip">
+        <h5>Chicago</h5>
+        <p>Downtown Loop, IL 60601</p>
+      </div>
+    </div>
+
+    <div class="location location-nyc">
+      <div class="pin-1"></div>
+      <div class="show_conent"><h5>New York</h5></div>
+      <div class="tooltip">
+        <h5>New York</h5>
+        <p>135 E 57th Street<br>New York NY 10022</p>
+      </div>
+    </div>
+
+    <div class="location location-london">
+      <div class="pin-1"></div>
+      <div class="show_conent"><h5>London</h5></div>
+      <div class="tooltip">
+        <h5>London</h5>
+        <p>10 Downing Street, SW1A</p>
+      </div>
+    </div>
+
+    <div class="location location-birmingham">
+      <div class="pin-1"></div>
+      <div class="show_conent"><h5>Birmingham</h5></div>
+      <div class="tooltip">
+        <h5>Birmingham</h5>
+        <p>Colmore Row, B3 3AG</p>
+      </div>
+    </div>
+
+    <div class="location location-manchester location-manchester-right">
+      <div class="pin-1"></div>
+      <div class="show_conent"><h5>Manchester</h5></div>
+      <div class="tooltip">
+        <h5>Manchester</h5>
+        <p>Piccadilly, M1 2BN</p>
+      </div>
+    </div>
+
+    <div class="location location-barcelona">
+      <div class="pin-1"></div>
+      <div class="show_conent"><h5>Barcelona</h5></div>
+      <div class="tooltip">
+        <h5>Barcelona</h5>
+        <p>Gran Via de les Corts, 08010</p>
+      </div>
+    </div>
+
+    <div class="location location-dubai location-dubai-right">
+      <div class="pin-1"></div>
+      <div class="show_conent"><h5>Dubai</h5></div>
+      <div class="tooltip">
+        <h5>Dubai</h5>
+        <p>Sheikh Zayed Road</p>
+      </div>
+    </div>
+
+    <div class="location location-hk location-hk-right">
+      <div class="pin-1"></div>
+      <div class="show_conent"><h5>Hong Kong</h5></div>
+      <div class="tooltip">
+        <h5>Hong Kong</h5>
+        <p>Central, HK Island</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- JS: Toggle for mobile click -->
+<script>
+  document.querySelectorAll('.location').forEach(location => {
+    location.addEventListener('click', () => {
+      const tooltip = location.querySelector('.tooltip');
+      const label = location.querySelector('.show_conent');
+      tooltip.classList.toggle('show');
+      label.classList.toggle('hide');
+    });
+  });
+</script>
+</body>
+</html>
