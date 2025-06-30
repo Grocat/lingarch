@@ -2260,7 +2260,7 @@ section.contact_info_section {
 }
 
 section.contact-us-section{
-  background-image: url('image/contact-us-banner.png'); 
+  background-image: url('./image/contact-us-banner.png'); 
   background-size: cover; 
   background-position: center; 
   padding: 60px 0;
