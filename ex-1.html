@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Office Locations</title>
+  <style>
+
+    .location-container_desktop {
+      display: flex;
+      gap: 30px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .location-tabs_des {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .tab-btn-destop {
+      padding: 12px;
+      border: 2px solid black;
+      text-align: center;
+      font-weight: bold;
+      cursor: pointer;
+      background: white;
+      transition: all 0.3s ease;
+    }
+
+    .tab-btn-destop.active {
+      border: 2px solid #4CAF50;
+      color: #4CAF50;
+    }
+
+    .location-content-destop {
+      flex: 2;
+      background-color: #f7f7f7;
+      padding: 25px 30px;
+      border-radius: 6px;
+    }
+
+    .location-content-destop h3 {
+      color: #1d4ed8;
+      background-color: #dbeafe;
+      display: inline-block;
+      padding: 6px 12px;
+      font-size: 20px;
+      margin-bottom: 20px;
+    }
+
+    .location-content-destop p {
+      margin: 8px 0;
+      font-size: 16px;
+      line-height: 1.5;
+    }
+
+    .hidden-destop {
+      display: none;
+    }
+    .map > div {
+  display: none;
+  height: 400px;
+}
+.map > div.active {
+  display: block;
+}
+
+  </style>
+</head>
+<body>
+<section class="desktop_location-section">
+  <div class="map">
+        <div class="container-fluid px-0 bangalore-map active">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31105.425917448363!2d77.5353080791016!3d12.9604438!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae162f61db7d1d%3A0xef200b0ab866e460!2sApollo%20Power%20Systems!5e0!3m2!1sen!2sin!4v1724760522528!5m2!1sen!2sin" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+  </div>
+  <div class="container-fluid px-0 hyderabad-map">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d6399.608587384517!2d78.39341838329489!3d17.496529232405074!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb91f29b45d2b1%3A0x5c0b0252c5c2e662!2sApollo%20Power%20Systems!5e0!3m2!1sen!2sin!4v1727770067357!5m2!1sen!2sin" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+  </div>
+  <div class="container-fluid px-0 chennai-map">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3886.5125183268474!2d80.2250879!3d13.0666718!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a526688c1224b1d%3A0x86f34f8f2ad78f17!2sApollo%20Power%20Systems!5e0!3m2!1sen!2sin!4v1727770147824!5m2!1sen!2sin" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+  </div>
+  <div class="container-fluid px-0 pune-map">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15128.863139582083!2d73.7812815!3d18.5643079!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2bfe7321a6f83%3A0xb5b9c65cbe95e36a!2sApollo%20Facility%20Management%20Services!5e0!3m2!1sen!2sin!4v1727770201460!5m2!1sen!2sin" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+  </div>
+  <div class="container-fluid px-0 mumbai-map">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15083.51840343056!2d73.0007235!3d19.0690305!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c1031133b7a1%3A0x1443e5a54bb57ef5!2sApollo%20Facility%20Management%20services%20pvt%20ltd.!5e0!3m2!1sen!2sin!4v1727770233598!5m2!1sen!2sin" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+  </div>
+  <div class="container-fluid px-0 delhi-map">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14023.198344090648!2d77.0811045!3d28.5156769!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d19979fcb48e9%3A0xd295bba7aec64fc9!2sApollo%20Facility%20Management%20Services!5e0!3m2!1sen!2sin!4v1727770271729!5m2!1sen!2sin" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+  </div>
+    </div>
+<div class="location-container_desktop">
+  <div class="location-tabs_des">
+    <div class="tab-btn-destop active" data-city="bangalore">Bangalore</div>
+    <div class="tab-btn-destop" data-city="hyderabad">Hyderabad</div>
+    <div class="tab-btn-destop" data-city="chennai">Chennai</div>
+    <div class="tab-btn-destop" data-city="pune">Pune</div>
+    <div class="tab-btn-destop" data-city="mumbai">Mumbai</div>
+    <div class="tab-btn-destop" data-city="delhi">Delhi</div>
+  </div>
+
+  <div class="location-content-destop">
+    <!-- Bangalore (default active) -->
+    <div class="city-content" id="bangalore">
+     <h3>CORPORATE OFFICE :</h3>
+    <p><strong>Apollo Power Systems Pvt. Ltd.</strong><br>
+      #31, 1st Floor, 1st Main Road, Chamarajpet,<br>
+      Bengaluru - 560018<br>
+      Karnataka, India</p>
+    <p><strong>Job Inquiries :</strong><br>
+      +91 8880159990 | careers@apollopowersystems.com</p>
+    <p><strong>Sales Inquiries :</strong><br>
+      +91 9591073031 | sales@apollopowersystems.in</p>
+    </div>
+
+    <!-- Placeholder content for others -->
+    <div class="city-content hidden-destop" id="hyderabad">
+       <h3>BRANCH OFFICE :</h3>
+    <p>Door No.15-31-DM-74,<br>
+      4th Floor, Dharmareddy Colony,<br>
+      Kukatpally, RR District,<br>
+      Hyderabad - 500 072.</p>
+    <p><strong>Job Inquiries :</strong><br>
+      +91 9100969311 | careers@apollopowersystems.com</p>
+    <p><strong>Sales Inquiries :</strong><br>
+      +91 9591073031 | sales@apollopowersystems.in</p>
+    </div>
+
+    <div class="city-content hidden-destop" id="chennai">
+      <h3>BRANCH OFFICE :</h3>
+    <p>Millennium Tower,<br>
+      3rd Floor Old #146, New #133/9,<br>
+      Nelson Manickam Road,<br>
+      Chennai - 600 029.</p>
+    <p><strong>Job Inquiries :</strong><br>
+      +91 8754502999 | careers@apollopowersystems.com</p>
+    <p><strong>Sales Inquiries :</strong><br>
+      +91 9591073031 | sales@apollopowersystems.in</p>
+    </div>
+
+    <div class="city-content hidden-destop" id="pune">
+     <h3>BRANCH OFFICE :</h3>
+    <p>Sr. No. 13/7, Office No 207,<br>
+      2nd Floor, Mont Vert Apex,<br>
+      Baner Road, Baner,<br>
+      Pune - 411045.</p>
+    <p><strong>Job Inquiries :</strong><br>
+      +91 7420855087 | careers@apollopowersystems.com</p>
+    <p><strong>Sales Inquiries :</strong><br>
+      +91 9591073031 | sales@apollopowersystems.in</p>
+    </div>
+
+    <div class="city-content hidden-destop" id="mumbai">
+      <h3>BRANCH OFFICE :</h3>
+    <p>No-512,<br>
+      5th Floor Thacker Tower Plot 86,<br>
+      Sector 17, Vashi, Navi Mumbai - 400703</p>
+    <p><strong>Job Inquiries :</strong><br>
+      +91 6366995075 | careers@apollopowersystems.com</p>
+    <p><strong>Sales Inquiries :</strong><br>
+      +91 9591073031 | sales@apollopowersystems.in</p>
+    </div>
+
+    <div class="city-content hidden-destop" id="delhi">
+      <h3>BRANCH OFFICE :</h3>
+    <p>Plot - 96,<br>
+      1st Floor, Udyog Vihar Phase 1, Dundahera Village,<br>
+      Sector 20, Gurugram, Haryana - 122016</p>
+    <p><strong>Job Inquiries :</strong><br>
+      +91 6366995075 | careers@apollopowersystems.com</p>
+    <p><strong>Sales Inquiries :</strong><br>
+      +91 9591073031 | sales@apollopowersystems.in</p>
+    </div>
+  </div>
+</div>
+</section>
+
+<script>
+  const tabs = document.querySelectorAll('.tab-btn-destop');
+  const contents = document.querySelectorAll('.city-content');
+  const maps = document.querySelectorAll('.map > div');
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      // Remove active class from all tabs
+      tabs.forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+
+      // Hide all content
+      contents.forEach(c => c.classList.add('hidden-destop'));
+
+      // Show selected content
+      const selected = tab.getAttribute('data-city');
+      document.getElementById(selected).classList.remove('hidden-destop');
+
+      // Hide all maps
+      maps.forEach(m => m.classList.remove('active'));
+
+      // Show selected map (match class "map1", "map2", etc.)
+      document.querySelector(`.map .${selected}-map`).classList.add('active');
+    });
+  });
+</script>
+
+
+</body>
+</html>
